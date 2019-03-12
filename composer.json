@@ -1,15 +1,15 @@
 {
     "name": "hampel/mailtest",
     "description": "Package for sending test emails from Laravel",
-	"homepage" : "https://bitbucket.org/hampel/mailtest",
+	"homepage" : "https://bitbucket.org/hampel/laravel-mail-test",
 	"authors": [{
 		"name": "Simon Hampel",
 		"email": "simon@hampelgroup.com",
 		"role": "Developer"
 	}],
 	"support": {
-		"issues": "https://bitbucket.org/hampel/mailtest/issues",
-		"source": "https://bitbucket.org/hampel/mailtest/src"
+		"issues": "https://bitbucket.org/hampel/laravel-mail-test/src",
+		"source": "https://bitbucket.org/hampel/laravel-mail-test/issues"
 	},
 	"keywords" : [
 		"laravel",
