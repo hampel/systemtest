@@ -1,4 +1,4 @@
-<?php namespace Hampel\MailTest\Commands;
+<?php namespace Hampel\SystemTest\Commands;
 
 use Illuminate\Mail\Mailer;
 use Illuminate\Console\Command;
@@ -15,7 +15,7 @@ class MailTest extends Command
      *
      * @var string
      */
-    protected $signature = 'mail:test {email}';
+    protected $signature = 'test:mail {email}';
 
     /**
 	 * The console command description.

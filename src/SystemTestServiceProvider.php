@@ -1,9 +1,9 @@
-<?php namespace Hampel\MailTest;
+<?php namespace Hampel\SystemTest;
 
-use Hampel\MailTest\Commands\MailTest;
+use Hampel\SystemTest\Commands\MailTest;
 use Illuminate\Support\ServiceProvider;
 
-class MailTestServiceProvider extends ServiceProvider {
+class SystemTestServiceProvider extends ServiceProvider {
 
 	/**
 	 * Register the service provider.

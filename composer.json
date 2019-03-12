@@ -1,19 +1,23 @@
 {
-    "name": "hampel/mailtest",
-    "description": "Package for sending test emails from Laravel",
-	"homepage" : "https://bitbucket.org/hampel/laravel-mail-test",
+    "name": "hampel/systemtest",
+    "description": "Package for testing various Laravel subsystems in production",
+	"homepage" : "https://bitbucket.org/hampel/laravel-system-test",
 	"authors": [{
 		"name": "Simon Hampel",
 		"email": "simon@hampelgroup.com",
 		"role": "Developer"
 	}],
 	"support": {
-		"issues": "https://bitbucket.org/hampel/laravel-mail-test/src",
-		"source": "https://bitbucket.org/hampel/laravel-mail-test/issues"
+		"issues": "https://bitbucket.org/hampel/laravel-system-test/src",
+		"source": "https://bitbucket.org/hampel/laravel-system-test/issues"
 	},
 	"keywords" : [
 		"laravel",
 		"email",
+		"cache",
+		"filesystem",
+		"logging",
+		"notifications",
 		"test"
 	],
 	"license" : [
@@ -25,13 +29,13 @@
     },
 	"autoload": {
 		"psr-4": {
-			"Hampel\\MailTest\\": "src/"
+			"Hampel\\SystemTest\\": "src/"
 		}
 	},
 	"extra": {
 		"laravel": {
 			"providers": [
-				"Hampel\\MailTest\\MailTestServiceProvider"
+				"Hampel\\SystemTest\\SystemTestServiceProvider"
 			]
 		}
 	},

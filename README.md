@@ -1,7 +1,8 @@
-Mail Test for Laravel
-=====================
+System Test for Laravel
+=======================
 
-This package provides a very simple mail test console command to verify if email delivery is operational.
+This package provides a number of console commands to test various subsystems (email, logging, notifications, etc) of a 
+Laravel system in production.
 
 By [Simon Hampel](mailto:simon@hampelgroup.com).
 
@@ -11,14 +12,14 @@ Installation
 The recommended way of installing the Alerts package is through [Composer](http://getcomposer.org):
 
 	:::bash
-	composer require hampel/mailtest:~1.0
+	composer require hampel/systemtest:~1.1
 
 Alternatively, specify the package name manually in your `composer.json`
 
     :::json
     {
         "require": {
-            "hampel/mailtest": "~1.0"
+            "hampel/systemtest": "~1.1"
         }
     }
 
@@ -32,10 +33,13 @@ The package is built to work with the Laravel Framework v5.5 and above.
 Usage
 -----
 
-Once installed, a new artisan console command will become available - `mail:test`:
+Once installed, new artisan console commands will become available:
+
+**Mail**
+
+Ensure that mail has been configured and then run the `test:mail` console command with a destination email address as 
+the parameter.
 
 	:::bash
-	artisan mail:test foo@example.com
+	artisan test:mail foo@example.com
 
-Ensure that mail has been configured and then run the above console command with an email address to send to as the 
-parameter. Any exceptions raised will be output to the console.
