@@ -1,0 +1,40 @@
+{
+    "name": "hampel/mailtest",
+    "description": "Package for sending test emails from Laravel",
+	"homepage" : "https://bitbucket.org/hampel/mailtest",
+	"authors": [{
+		"name": "Simon Hampel",
+		"email": "simon@hampelgroup.com",
+		"role": "Developer"
+	}],
+	"support": {
+		"issues": "https://bitbucket.org/hampel/mailtest/issues",
+		"source": "https://bitbucket.org/hampel/mailtest/src"
+	},
+	"keywords" : [
+		"laravel",
+		"email",
+		"test"
+	],
+	"license" : [
+		"MIT"
+	],
+	"require": {
+		"illuminate/support": "5.5.*|5.6.*|5.7.*",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+	"autoload": {
+		"psr-4": {
+			"Hampel\\MailTest\\": "src/"
+		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"Hampel\\MailTest\\MailTestServiceProvider"
+			]
+		}
+	},
+ 	"minimum-stability": "dev",
+	"prefer-stable": true
+}
