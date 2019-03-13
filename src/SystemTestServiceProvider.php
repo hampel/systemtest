@@ -1,7 +1,8 @@
 <?php namespace Hampel\SystemTest;
 
-use Hampel\SystemTest\Commands\MailTest;
 use Illuminate\Support\ServiceProvider;
+use Hampel\SystemTest\Commands\LogTest;
+use Hampel\SystemTest\Commands\MailTest;
 
 class SystemTestServiceProvider extends ServiceProvider {
 
@@ -19,6 +20,7 @@ class SystemTestServiceProvider extends ServiceProvider {
 	    if ($this->app->runningInConsole()) {
 	        $this->commands([
 	            MailTest::class,
+	            LogTest::class,
 	        ]);
 	    }
 	}
