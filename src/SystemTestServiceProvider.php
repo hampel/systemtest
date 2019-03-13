@@ -4,6 +4,7 @@ use Illuminate\Support\ServiceProvider;
 use Hampel\SystemTest\Commands\LogTest;
 use Hampel\SystemTest\Commands\FileTest;
 use Hampel\SystemTest\Commands\MailTest;
+use Hampel\SystemTest\Commands\CacheTest;
 
 class SystemTestServiceProvider extends ServiceProvider {
 
@@ -23,6 +24,7 @@ class SystemTestServiceProvider extends ServiceProvider {
 	            LogTest::class,
 	            MailTest::class,
 	            FileTest::class,
+	            CacheTest::class
 			]);
 	    }
 	}
