@@ -31,6 +31,8 @@ class MailTest extends Command
 	 */
 	public function handle(Mailer $mailer, Config $config)
 	{
+		// TODO: implement queueing
+
 		try
 		{
 			$name = $config['app.name'];
