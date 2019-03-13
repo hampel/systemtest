@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+1.2.0 (2019-03-13)
+------------------
+
+* implemented log writer test
+* implemented file system test
+* implemented cache store test
+
 1.1.0 (2019-03-13)
 ------------------
 

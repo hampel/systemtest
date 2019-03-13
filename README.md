@@ -42,4 +42,41 @@ the parameter.
 
 	:::bash
 	artisan test:mail foo@example.com
+	
+TODO: add support for sending via the mail queue
 
+**Log**
+
+Run the `test:log` console command to write a series of logs covering all severities to the default log file.
+
+The `--channel` option can be used to specify any other configured logging channel.
+
+	:::bash
+	artisan test:log --channel=syslog
+	
+**Filesystem**
+
+Run the `test:file` console command to list all files available on the default disk.
+
+The `--disk` option can be used to specify any other configured disk (eg `local` or `public`).
+
+	:::bash
+	artisan test:file --disk=public
+	
+Note that no files are written to the disk.
+
+**Cache**
+
+Run the `test:cache` console command to write test writing to and retrieving from the default cache store.
+
+The `--store` option can be used to specify any other configured cache store.
+
+	:::bash
+	artisan test:cache --store=array
+	
+The test will generate a random key, write it to the cache (provided the key doesn't already exist), increment the 
+value, then retrieve and delete the key - checking that the returned value is as expected.
+
+**Notifications**
+
+TODO: implement notifications testing!
