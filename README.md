@@ -77,6 +77,10 @@ The `--store` option can be used to specify any other configured cache store.
 The test will generate a random key, write it to the cache (provided the key doesn't already exist), increment the 
 value, then retrieve and delete the key - checking that the returned value is as expected.
 
+**Schedule**
+
+Rune the `test:schedule` console command to output details of scheduled commands to the console.
+
 **Notifications**
 
 TODO: implement notifications testing!
