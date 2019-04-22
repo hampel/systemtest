@@ -34,9 +34,9 @@ class FileTest extends Command
 		{
 			$disk = $this->option('disk');
 
-			$this->info("All files on {$disk} disk:");
+			$this->info("First 10 files on {$disk} disk:");
 
-			collect($file->disk($disk == 'default' ? null : $disk)->allFiles())->each(function($file) {
+			collect($file->disk($disk == 'default' ? null : $disk)->allFiles())->take(10)->each(function($file) {
 				$this->line($file);
 			});
 		}
