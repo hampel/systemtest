@@ -79,7 +79,7 @@ value, then retrieve and delete the key - checking that the returned value is as
 
 **Schedule**
 
-Rune the `test:schedule` console command to output details of scheduled commands to the console.
+Run the `test:schedule` console command to output details of scheduled commands to the console.
 
 **Notifications**
 
