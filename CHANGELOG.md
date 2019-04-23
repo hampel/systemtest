@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+1.4.0 (2019-04-23)
+------------------
+
+* implemented upload test
+* limit file test to first 10 files
+
 1.3.0 (2019-04-10)
 ------------------
 

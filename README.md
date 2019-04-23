@@ -81,6 +81,22 @@ value, then retrieve and delete the key - checking that the returned value is as
 
 Run the `test:schedule` console command to output details of scheduled commands to the console.
 
+**Upload**
+
+Run the `test:upload <path>` console command to upload the file at `<path>` to your default filesystem disk and report 
+back on the time taken.
+
+The `--disk` option can be used to specify any configured disk (eg `local` or `s3`).
+
+	:::bash
+	artisan test:file /path/to/foo.jpg --disk=s3
+	
+Note that the file will be uploaded to the root of the disk and then deleted - so both write and delete permissions are 
+required.
+
+A large test file such as those used by the [Linode Speedtest](https://www.linode.com/speedtest) are good for testing 
+upload speeds.
+
 **Notifications**
 
 TODO: implement notifications testing!
