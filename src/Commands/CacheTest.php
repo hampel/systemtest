@@ -43,9 +43,10 @@ class CacheTest extends Command
 			}
 
 			$cache->store($store)->increment($key);
-			if ($cache->store($store)->pull($key) !== 2)
+			$val = intval($cache->store($store)->pull($key));
+			if ($val !== 2)
 			{
-				$this->error("Did not receive the expected cache value for {$key}");
+				$this->error("Expected cache value for {$key}: [2], received [{$val}]");
 			}
 
 			$this->info("Cache store {$storeName} successfully tested");
