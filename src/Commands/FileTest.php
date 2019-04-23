@@ -28,7 +28,7 @@ class FileTest extends Command
 	 *
 	 * @return mixed
 	 */
-	public function handle(FilesystemManager $file)
+	public function handle(FilesystemManager $filesystem)
 	{
 		try
 		{
@@ -36,7 +36,7 @@ class FileTest extends Command
 
 			$this->info("First 10 files on {$disk} disk:");
 
-			collect($file->disk($disk == 'default' ? null : $disk)->allFiles())->take(10)->each(function($file) {
+			collect($filesystem->disk($disk == 'default' ? null : $disk)->allFiles())->take(10)->each(function($file) {
 				$this->line($file);
 			});
 		}
