@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+1.4.1 (2019-04-23)
+------------------
+
+* don't use facades in packages
+* better error handling for failed deletions
+* more useful output
+
 1.4.0 (2019-04-23)
 ------------------
 
