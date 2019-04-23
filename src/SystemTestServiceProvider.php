@@ -5,6 +5,7 @@ use Hampel\SystemTest\Commands\LogTest;
 use Hampel\SystemTest\Commands\FileTest;
 use Hampel\SystemTest\Commands\MailTest;
 use Hampel\SystemTest\Commands\CacheTest;
+use Hampel\SystemTest\Commands\UploadTest;
 use Hampel\SystemTest\Commands\ScheduleTest;
 
 class SystemTestServiceProvider extends ServiceProvider {
@@ -26,7 +27,8 @@ class SystemTestServiceProvider extends ServiceProvider {
 	            MailTest::class,
 	            FileTest::class,
 	            CacheTest::class,
-	            ScheduleTest::class
+	            ScheduleTest::class,
+	            UploadTest::class,
 			]);
 	    }
 	}
