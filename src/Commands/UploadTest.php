@@ -1,12 +1,13 @@
 <?php namespace Hampel\SystemTest\Commands;
 
-use File;
-use Storage;
 use Illuminate\Console\Command;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Config\Repository as Config;
 use Illuminate\Filesystem\FilesystemManager;
 
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class UploadTest extends Command
 {
@@ -30,20 +31,22 @@ class UploadTest extends Command
 	 *
 	 * @return mixed
 	 */
-	public function handle(FilesystemManager $filesystem)
+	public function handle(FilesystemManager $filesystem, Filesystem $files, Config $config)
 	{
 		$file = $this->argument('file');
 
+		$diskName = $this->option('disk');
+		$disk = ($diskName == 'default') ? null : $diskName;
+		$diskName = ($diskName == 'default') ? $config->get('filesystems.default') : $diskName;
+
 		try
 		{
-			$diskName = $this->option('disk');
-			$disk = ($diskName == 'default') ? null : $diskName;
-
 			$start = microtime(true);
-			$path = Storage::disk($disk)->putFile('', new \Illuminate\Http\File($file));
+			$path = $filesystem->disk($disk)->putFile('', new \Illuminate\Http\File($file));
 			$time = microtime(true) - $start;
-			$size = File::size($file);
+			$size = $files->size($file);
 			$size_human = $this->human_filesize($size);
+			$destination = "{$diskName}::[{$path}]";
 
 			$speed_human = '';
 			if ($time > 0)
@@ -51,14 +54,29 @@ class UploadTest extends Command
 				$speed = intval(round($size / $time));
 				$speed_human = " (" . $this->human_filesize($speed) . "/s)";
 			}
-			$this->info("Successfully stored {$size_human} file to [{$diskName}] in " . number_format($time, 2) . " seconds{$speed_human}");
-
-			Storage::disk($disk)->delete($path);
-			$this->info("Uploaded file has been removed");
+			$this->info("Successfully stored {$size_human} file to disk {$destination} in " . number_format($time, 2) . " seconds{$speed_human}");
 		}
 		catch (\Exception $e)
 		{
 			$this->error($e->getMessage() . ($e->getCode() ? " [" . $e->getCode() . "]" : ""));
+			return;
+		}
+
+		try
+		{
+			if (!$filesystem->disk($disk)->delete($path))
+			{
+				$this->info("Uploaded file could not be removed from disk {$destination} - please remove manually");
+				return;
+			}
+
+			$this->info("Uploaded file has been removed");
+		}
+		catch (\Exception $e)
+		{
+			$this->info("Uploaded file could not be removed - please remove manually: {$destination}");
+			$this->error($e->getMessage() . ($e->getCode() ? " [" . $e->getCode() . "]" : ""), OutputInterface::VERBOSITY_VERBOSE);
+			return;
 		}
 	}
 
