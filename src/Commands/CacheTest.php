@@ -33,22 +33,22 @@ class CacheTest extends Command
 	{
 		try
 		{
-			$store = $this->option('store');
-			$store_name = $store == 'default' ? null : $store;
+			$storeName = $this->option('store');
+			$store = $storeName == 'default' ? null : $storeName;
 			$key = Str::random();
 
-			if (!$cache->store($store_name)->add($key, 1))
+			if (!$cache->store($store)->add($key, 1))
 			{
 				$this->error("Could not add cache key {$key}");
 			}
 
-			$cache->store($store_name)->increment($key);
-			if ($cache->store($store_name)->pull($key) !== 2)
+			$cache->store($store)->increment($key);
+			if ($cache->store($store)->pull($key) !== 2)
 			{
 				$this->error("Did not receive the expected cache value for {$key}");
 			}
 
-			$this->info("Cache store {$store} successfully tested");
+			$this->info("Cache store {$storeName} successfully tested");
 		}
 		catch (\Exception $e)
 		{
