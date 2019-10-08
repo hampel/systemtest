@@ -80,7 +80,7 @@ class UploadTest extends Command
 		}
 	}
 
-	function human_filesize($bytes, $dec = 2)
+	protected function human_filesize($bytes, $dec = 2)
 	{
 	    $size   = array('B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
 	    $factor = floor((strlen($bytes) - 1) / 3);
