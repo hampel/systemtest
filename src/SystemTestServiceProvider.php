@@ -1,12 +1,13 @@
 <?php namespace Hampel\SystemTest;
 
-use Illuminate\Support\ServiceProvider;
-use Hampel\SystemTest\Commands\LogTest;
-use Hampel\SystemTest\Commands\FileTest;
-use Hampel\SystemTest\Commands\MailTest;
 use Hampel\SystemTest\Commands\CacheTest;
-use Hampel\SystemTest\Commands\UploadTest;
+use Hampel\SystemTest\Commands\FileTest;
+use Hampel\SystemTest\Commands\LogTest;
+use Hampel\SystemTest\Commands\MailTest;
+use Hampel\SystemTest\Commands\NotificationTest;
 use Hampel\SystemTest\Commands\ScheduleTest;
+use Hampel\SystemTest\Commands\UploadTest;
+use Illuminate\Support\ServiceProvider;
 
 class SystemTestServiceProvider extends ServiceProvider {
 
@@ -23,10 +24,11 @@ class SystemTestServiceProvider extends ServiceProvider {
 	{
 	    if ($this->app->runningInConsole()) {
 	        $this->commands([
+	            CacheTest::class,
+	            FileTest::class,
 	            LogTest::class,
 	            MailTest::class,
-	            FileTest::class,
-	            CacheTest::class,
+	            NotificationTest::class,
 	            ScheduleTest::class,
 	            UploadTest::class,
 			]);
