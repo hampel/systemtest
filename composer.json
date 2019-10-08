@@ -39,6 +39,9 @@
 			]
 		}
 	},
+    "suggest": {
+        "laravel/slack-notification-channel": "Required to use the slack transport."
+    },
  	"minimum-stability": "dev",
 	"prefer-stable": true
 }
