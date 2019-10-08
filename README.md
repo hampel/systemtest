@@ -4,7 +4,7 @@ System Test for Laravel
 This package provides a number of console commands to test various subsystems (email, logging, notifications, etc) of a 
 Laravel system in production.
 
-By [Simon Hampel](mailto:simon@hampelgroup.com).
+By [Simon Hampel](https://twitter.com/SimonHampel).
 
 Installation
 ------------
@@ -12,14 +12,14 @@ Installation
 The recommended way of installing the Alerts package is through [Composer](http://getcomposer.org):
 
 	:::bash
-	composer require hampel/systemtest:~1.1
+	composer require hampel/systemtest
 
 Alternatively, specify the package name manually in your `composer.json`
 
     :::json
     {
         "require": {
-            "hampel/systemtest": "~1.1"
+            "hampel/systemtest": "~1.5"
         }
     }
 
@@ -99,4 +99,16 @@ upload speeds.
 
 **Notifications**
 
-TODO: implement notifications testing!
+Run the `test:notification <channel> <destination>` console command to send a notification to the selected channel.
+
+Currently supported channels are `mail` and `slack`. The destination must also be specified, for mail that would be the
+email address to send to and for Slack it would be the inbound webhook URL.
+
+For example:
+
+	:::bash
+	artisan test:notification mail foo@example.com
+	
+	artisan test:notification slack https://hooks.slack.com/services/...
+	
+Be sure to check your inbox or Slack channel for a test notification message.
