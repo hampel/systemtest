@@ -28,7 +28,8 @@ Run Composer to update the new requirement.
     :::bash
     $ composer update
 
-The package is built to work with the Laravel Framework v5.5 and above and has been tested with Laravel 6.x.
+The package is built to work with the Laravel Framework v5.5 and above and has been tested with Laravel 6.x and
+Laravel 7.x
 
 Usage
 -----
