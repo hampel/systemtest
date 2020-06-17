@@ -19,7 +19,7 @@ Alternatively, specify the package name manually in your `composer.json`
     :::json
     {
         "require": {
-            "hampel/systemtest": "~1.5"
+            "hampel/systemtest": "^1.1"
         }
     }
 
