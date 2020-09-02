@@ -1,6 +1,11 @@
 System Test for Laravel
 =======================
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/hampel/systemtest.svg?style=flat-square)](https://packagist.org/packages/hampel/systemtest)
+[![Total Downloads](https://img.shields.io/packagist/dt/hampel/systemtest.svg?style=flat-square)](https://packagist.org/packages/hampel/systemtest)
+[![Open Issues](https://img.shields.io/bitbucket/issues/hampel/laravel-system-test.svg?style=flat-square)](https://bitbucket.org/hampel/laravel-system-test/issues)
+[![License](https://img.shields.io/packagist/l/hampel/systemtest.svg?style=flat-square)](https://packagist.org/packages/hampel/systemtest)
+
 This package provides a number of console commands to test various subsystems (email, logging, notifications, etc) of a 
 Laravel system in production.
 
