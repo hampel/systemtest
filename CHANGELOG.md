@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+1.10.0 (2023-06-12)
+------------------
+
+* remove support for Laravel versions earlier than 8.x - we're not going to continue testing older versions for compatibility
+* implmenent About command for Laravel v9.21 and above
+
 1.9.0 (2023-06-05)
 ------------------
 
