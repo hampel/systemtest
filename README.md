@@ -15,27 +15,9 @@ By [Simon Hampel](mailto:simon@hampelgroup.com)
 Installation
 ------------
 
-The recommended way of installing the Alerts package is through [Composer](http://getcomposer.org):
+To install using composer, run the following command:
 
-	:::bash
-	composer require hampel/systemtest
-
-Alternatively, specify the package name manually in your `composer.json`
-
-    :::json
-    {
-        "require": {
-            "hampel/systemtest": "^1.1"
-        }
-    }
-
-Run Composer to update the new requirement.
-
-    :::bash
-    $ composer update
-
-The package is built to work with the Laravel Framework v5.5 and above and has been tested with 
-Laravel 6.x | 7.x | 8.x | 9.x | 10.x
+`composer require hampel/systemtest`
 
 Usage
 -----
