@@ -1,15 +1,15 @@
 {
     "name": "hampel/systemtest",
-	"homepage" : "https://bitbucket.org/hampel/laravel-system-test",
     "description": "Laravel package for testing or troublshooting various subsystems",
+	"homepage" : "https://github.com/hampel/systemtest",
 	"authors": [{
 		"name": "Simon Hampel",
 		"email": "simon@hampelgroup.com",
 		"role": "Developer"
 	}],
 	"support": {
-		"issues": "https://bitbucket.org/hampel/laravel-system-test/src",
-		"source": "https://bitbucket.org/hampel/laravel-system-test/issues"
+		"issues": "https://github.com/hampel/systemtest/issues",
+		"source": "https://github.com/hampel/systemtest"
 	},
 	"keywords" : [
 		"laravel",
