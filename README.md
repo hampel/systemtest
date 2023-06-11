@@ -7,7 +7,8 @@ System Test for Laravel
 [![License](https://img.shields.io/packagist/l/hampel/systemtest.svg?style=flat-square)](https://packagist.org/packages/hampel/systemtest)
 
 This package provides a number of console commands to test various subsystems (email, logging, notifications, etc) of a 
-Laravel system in production.
+Laravel system in production. It is primarily intended for troubleshooting issues on a newly deployed application or
+if you've moved to a new server - identifying permissions errors and such.
 
 By [Simon Hampel](https://twitter.com/SimonHampel).
 
