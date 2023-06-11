@@ -7,6 +7,7 @@ use Hampel\SystemTest\Commands\MailTest;
 use Hampel\SystemTest\Commands\NotificationTest;
 use Hampel\SystemTest\Commands\ScheduleTest;
 use Hampel\SystemTest\Commands\UploadTest;
+use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Support\ServiceProvider;
 
 class SystemTestServiceProvider extends ServiceProvider {
@@ -32,6 +33,12 @@ class SystemTestServiceProvider extends ServiceProvider {
 	            ScheduleTest::class,
 	            UploadTest::class,
 			]);
+
+            // About command was added in Laravel 9.21.0, so only invoke it if we're running a later version
+            if (version_compare($this->app->version(), '9.21.0', '>='))
+            {
+                AboutCommand::add('SystemTest', fn() => ['Active' => 'true']);
+            }
 	    }
 	}
 }
