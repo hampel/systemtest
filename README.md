@@ -10,7 +10,7 @@ This package provides a number of console commands to test various subsystems (e
 Laravel system in production. It is primarily intended for troubleshooting issues on a newly deployed application or
 if you've moved to a new server - identifying permissions errors and such.
 
-By [Simon Hampel](https://twitter.com/SimonHampel).
+By [Simon Hampel](mailto:simon@hampelgroup.com)
 
 Installation
 ------------
